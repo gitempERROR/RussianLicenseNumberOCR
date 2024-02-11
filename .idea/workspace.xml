@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09b1712e-7938-4d91-a85b-e02eca55135e" name="Changes" comment="add config file">
-      <change afterPath="$PROJECT_DIR$/utils.py" afterDir="false" />
+    <list default="true" id="09b1712e-7938-4d91-a85b-e02eca55135e" name="Changes" comment="add default value for in_channels param in OCR model">
+      <change afterPath="$PROJECT_DIR$/trainOCR.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +89,31 @@
       <option name="project" value="LOCAL" />
       <updated>1707679405234</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="add utils.py file with model checkpoint save and load funcs">
+      <option name="closed" value="true" />
+      <created>1707679820988</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1707679820988</updated>
+    </task>
+    <task id="LOCAL-00006" summary="add LOAD_MODEL and SAVE_MODEL hyperparams">
+      <option name="closed" value="true" />
+      <created>1707685733126</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1707685733126</updated>
+    </task>
+    <task id="LOCAL-00007" summary="add default value for in_channels param in OCR model">
+      <option name="closed" value="true" />
+      <created>1707685775837</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1707685775837</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -107,6 +132,9 @@
     <MESSAGE value="add simpleOCR.py" />
     <MESSAGE value="fix datasetOCR.py digits indexing error" />
     <MESSAGE value="add config file" />
-    <option name="LAST_COMMIT_MESSAGE" value="add config file" />
+    <MESSAGE value="add utils.py file with model checkpoint save and load funcs" />
+    <MESSAGE value="add LOAD_MODEL and SAVE_MODEL hyperparams" />
+    <MESSAGE value="add default value for in_channels param in OCR model" />
+    <option name="LAST_COMMIT_MESSAGE" value="add default value for in_channels param in OCR model" />
   </component>
 </project>
