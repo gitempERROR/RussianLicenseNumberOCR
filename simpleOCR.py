@@ -15,14 +15,15 @@ class SimpleOCR(nn.Module):
                 nn.MaxPool2d(kernel_size=2, stride=2),
                 nn.Conv2d(32, 64, kernel_size=3, padding=1),
                 nn.LeakyReLU(0.1),
-                nn.BatchNorm2d(64)
+                nn.BatchNorm2d(64),
+                nn.MaxPool2d(kernel_size=2, stride=2),
             ]
         )
         self.out = nn.ModuleList(
             [
-                nn.Linear((500 * 100 * 64), 512),
+                nn.Linear((125 * 25 * 64), 256),
                 nn.LeakyReLU(0.1),
-                nn.Linear(512, 11 * (len(string.digits) + len(string.ascii_letters))),
+                nn.Linear(256, 11 * (len(string.digits) + len(string.ascii_letters))),
                 nn.Sigmoid()
             ]
         )

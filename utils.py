@@ -8,7 +8,7 @@ def save_model_checkpoint(model, optimizer, checkpoint_path):
         'state_dict': model.state_dict(),
         'optimizer': optimizer.state_dict()
     }
-    torch.save(checkpoint_path, checkpoint)
+    torch.save(checkpoint, checkpoint_path)
     print('  Save complete!')
 
 
