@@ -30,5 +30,5 @@ class OCRDataset(torch.utils.data.Dataset):
             if letter in string.ascii_letters:
                 label[i][0] = string.ascii_letters.index(letter)
             elif letter in string.digits:
-                label[i][0] = string.digits.index(letter)
+                label[i][0] = string.digits.index(letter) + len(string.ascii_letters)
         return image, label
