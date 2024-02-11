@@ -4,7 +4,7 @@ import string
 
 
 class SimpleOCR(nn.Module):
-    def __init__(self, in_channels):
+    def __init__(self, in_channels=3):
         super().__init__()
         self.in_channels = in_channels
         self.conv = nn.ModuleList(
