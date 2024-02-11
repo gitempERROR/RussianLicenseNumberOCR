@@ -1,5 +1,8 @@
 import torch
 import configOCR
+import string
+import numpy as np
+from PIL import Image
 
 
 def save_model_checkpoint(model, optimizer, checkpoint_path):
@@ -22,3 +25,26 @@ def load_model_checkpoint(model, optimizer, checkpoint_path):
         param_group['lr'] = configOCR.LEARNING_RATE
 
     print('  Load complete!')
+
+
+def print_result(predictions, label_string):
+    symbol_list = configOCR.LETTER_LIST + list(string.digits)
+    predictions = torch.argmax(predictions.to('cpu'), -1)
+    print(label_string[0])
+    for symbol in predictions[0]:
+        print(symbol_list[symbol], end='')
+    print()
+
+
+def test_func(model):
+    img = np.array(Image.open(r"C:\Programming\Projects\OCR Fixed generator\image_ХХ41КР35rus.png").convert('RGB'))
+    img = configOCR.TRANSFORMS(image=img)['image']
+    img = img.to(configOCR.DEVICE).unsqueeze(0)
+    with torch.no_grad():
+        predictions = model(img)
+    predictions = torch.argmax(predictions.to('cpu'), -1)
+
+    symbol_list = configOCR.LETTER_LIST + list(string.digits)
+    for symbol in predictions[0]:
+        print(symbol_list[symbol], end='')
+    print()

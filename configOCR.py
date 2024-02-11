@@ -3,8 +3,9 @@ import torch
 from albumentations.pytorch import ToTensorV2
 
 DEVICE = 'cuda' if torch.cuda.is_available() else 'cpu'
-NUM_WORKERS = 1
-BATCH_SIZE = 16
+NUM_WORKERS = 6
+BATCH_SIZE = 4
+LETTER_LIST = ['А', 'В', 'Е', 'К', 'М', 'Н', 'О', 'Р', 'С', 'Т', 'У', 'Х', 'r', 'u', 's']
 IMAGE_SIZE = 500
 LEARNING_RATE = 3e-4
 NUM_EPOCHS = 100

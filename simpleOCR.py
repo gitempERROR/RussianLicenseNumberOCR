@@ -1,6 +1,7 @@
 import torch
 import torch.nn as nn
 import string
+import configOCR
 
 
 class SimpleOCR(nn.Module):
@@ -14,17 +15,21 @@ class SimpleOCR(nn.Module):
                 nn.BatchNorm2d(32),
                 nn.MaxPool2d(kernel_size=2, stride=2),
                 nn.Conv2d(32, 64, kernel_size=3, padding=1),
+                nn.Conv2d(64, 64, kernel_size=1),
                 nn.LeakyReLU(0.1),
                 nn.BatchNorm2d(64),
+                nn.MaxPool2d(kernel_size=2, stride=2),
+                nn.Conv2d(64, 128, kernel_size=3, padding=1),
+                nn.LeakyReLU(0.1),
+                nn.BatchNorm2d(128),
                 nn.MaxPool2d(kernel_size=2, stride=2),
             ]
         )
         self.out = nn.ModuleList(
             [
-                nn.Linear((125 * 25 * 64), 256),
+                nn.Linear((62 * 12 * 128), 256),
                 nn.LeakyReLU(0.1),
-                nn.Linear(256, 11 * (len(string.digits) + len(string.ascii_letters))),
-                nn.Sigmoid()
+                nn.Linear(256, 11 * (len(string.digits) + len(configOCR.LETTER_LIST)))
             ]
         )
 
@@ -34,5 +39,5 @@ class SimpleOCR(nn.Module):
         x = torch.flatten(x, start_dim=1)
         for module in self.out:
             x = module(x)
-        return x.reshape(x.shape[0], 11, len(string.digits) + len(string.ascii_letters))
+        return x.reshape(x.shape[0], 11, len(string.digits) + len(configOCR.LETTER_LIST))
 

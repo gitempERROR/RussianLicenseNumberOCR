@@ -1,5 +1,6 @@
 import torch
 import string
+import configOCR
 import os
 import numpy as np
 from PIL import Image
@@ -27,8 +28,8 @@ class OCRDataset(torch.utils.data.Dataset):
 
         for i in range(len(label_string)):
             letter = label_string[i]
-            if letter in string.ascii_letters:
-                label[i][0] = string.ascii_letters.index(letter)
+            if letter in configOCR.LETTER_LIST:
+                label[i][0] = configOCR.LETTER_LIST.index(letter)
             elif letter in string.digits:
-                label[i][0] = string.digits.index(letter) + len(string.ascii_letters)
-        return image, label
+                label[i][0] = string.digits.index(letter) + len(configOCR.LETTER_LIST)
+        return image, label, label_string
