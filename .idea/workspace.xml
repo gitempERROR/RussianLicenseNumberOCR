@@ -4,16 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09b1712e-7938-4d91-a85b-e02eca55135e" name="Changes" comment="change project to the real photos dataset">
-      <change afterPath="$PROJECT_DIR$/LicenseNumberLocalization/modelYOLOv3.py" afterDir="false" />
+    <list default="true" id="09b1712e-7938-4d91-a85b-e02eca55135e" name="Changes" comment="add YoloV3 model architecture file">
       <change afterPath="$PROJECT_DIR$/LicenseNumberLocalization/utilsYOLO.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configOCR.py" beforeDir="false" afterPath="$PROJECT_DIR$/OCR/configOCR.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datasetOCR.py" beforeDir="false" afterPath="$PROJECT_DIR$/OCR/datasetOCR.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/OCR/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simpleOCR.py" beforeDir="false" afterPath="$PROJECT_DIR$/OCR/simpleOCR.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trainOCR.py" beforeDir="false" afterPath="$PROJECT_DIR$/OCR/trainOCR.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/OCR/utils.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,7 +154,23 @@
       <option name="project" value="LOCAL" />
       <updated>1707905627144</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="move OCR part of the project to dedicated dir">
+      <option name="closed" value="true" />
+      <created>1707908745606</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1707908745606</updated>
+    </task>
+    <task id="LOCAL-00013" summary="add YoloV3 model architecture file">
+      <option name="closed" value="true" />
+      <created>1707921430760</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1707921430760</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -187,7 +196,9 @@
     <MESSAGE value="add main_file&#10;fixed multiple bugs" />
     <MESSAGE value="change model&#10;add test_func for printing non training license number prediction&#10;change Adam optimizer to SGD&#10;change batch size" />
     <MESSAGE value="change project to the real photos dataset" />
-    <option name="LAST_COMMIT_MESSAGE" value="change project to the real photos dataset" />
+    <MESSAGE value="move OCR part of the project to dedicated dir" />
+    <MESSAGE value="add YoloV3 model architecture file" />
+    <option name="LAST_COMMIT_MESSAGE" value="add YoloV3 model architecture file" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
