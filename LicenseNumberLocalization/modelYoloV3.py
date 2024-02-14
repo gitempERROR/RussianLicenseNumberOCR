@@ -34,14 +34,14 @@ class CNNBlock(nn.Module):
 
         if use_bn_act:
             self.conv = nn.Sequential(
-                nn.Conv2d(in_size, out_size, bias=False, **kwargs),
-                nn.BatchNorm2d(out_size),
+                nn.Conv2d(self.in_size, self.out_size, bias=False, **kwargs),
+                nn.BatchNorm2d(self.out_size),
                 nn.LeakyReLU(0.1)
             )
         else:
-            self.conv = nn.Conv2d(in_size, out_size, bias=True, **kwargs)
+            self.conv = nn.Conv2d(self.in_size, self.out_size, bias=True, **kwargs)
 
-    def forward(self, x: torch.tensor):
+    def forward(self, x):
         return self.conv(x)
 
 
@@ -52,17 +52,18 @@ class ResidualBlock(nn.Module):
         self.use_residual = use_residual
         self.conv = nn.ModuleList()
         self.num_repeats = num_repeats
+
         for _ in range(self.num_repeats):
             repeat = nn.Sequential(
                 CNNBlock(in_size, in_size // 2, kernel_size=1),
-                CNNBlock(in_size // 2, in_size, kernel_size=3, padding = 1),
+                CNNBlock(in_size // 2, in_size, kernel_size=3, padding=1),
             )
             self.conv.append(repeat)
 
-    def forward(self, x: torch.tensor):
+    def forward(self, x):
         if self.use_residual:
             for module in self.conv:
-                x += module(x)
+                x = x + module(x)
         else:
             for module in self.conv:
                 x = module(x)
@@ -74,13 +75,13 @@ class ScaledPrediction(nn.Module):
         super().__init__()
         self.in_size = in_size
         self.conv = nn.Sequential(
-            CNNBlock(in_size, in_size * 2, kernel_size=3, padding=1),
-            CNNBlock(in_size * 2, 15, use_bn_act=False ,kernel_size=1)
+            CNNBlock(self.in_size, self.in_size * 2, kernel_size=3, padding=1),
+            CNNBlock(self.in_size * 2, 15, use_bn_act=False, kernel_size=1)
         )
 
     def forward(self, x: torch.tensor):
         x = self.conv(x)
-        x = x.reshape(x.shape[0], 5, 3, x.shape[2], x.shape[3])  # test without permute
+        x = x.reshape(x.shape[0], 3, 5, x.shape[2], x.shape[3]).permute(0, 1, 3, 4, 2)
         return x
 
 
@@ -105,7 +106,7 @@ class YoloV3(nn.Module):
                 continue
 
             if isinstance(layer, nn.Upsample):
-                torch.cat((x, skip_connections[-1]), dim=1)
+                x = torch.cat([x, skip_connections[-1]], dim=1)
                 skip_connections.pop()
 
         return predictions
@@ -114,6 +115,7 @@ class YoloV3(nn.Module):
     def _create_conv_layers(self):
         in_size = self.in_size
         layers = nn.ModuleList()
+
         for layer in architecture:
             if isinstance(layer, tuple):
                 out_size, kernel_size, stride = layer
@@ -136,6 +138,7 @@ class YoloV3(nn.Module):
                     CNNBlock(in_size, in_size//2, kernel_size=1),
                     ScaledPrediction(in_size//2)
                 ]
+                in_size = in_size // 2
                 continue
 
             if layer == 'U':
