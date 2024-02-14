@@ -2,7 +2,7 @@ from torchinfo import summary
 from tqdm import tqdm
 from simpleOCR import SimpleOCR
 from datasetOCR import OCRDataset
-from utils import *
+from utilsOCR import *
 
 
 def train_loop(model, optimizer, loss_fn, scaler, train_loader):
