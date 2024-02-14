@@ -23,13 +23,17 @@ class SimpleOCR(nn.Module):
                 nn.LeakyReLU(0.1),
                 nn.BatchNorm2d(128),
                 nn.MaxPool2d(kernel_size=2, stride=2),
+                nn.Conv2d(128, 256, kernel_size=3, padding=1),
+                nn.LeakyReLU(0.1),
+                nn.BatchNorm2d(256),
+                nn.MaxPool2d(kernel_size=2, stride=2),
             ]
         )
         self.out = nn.ModuleList(
             [
-                nn.Linear((62 * 12 * 128), 256),
+                nn.Linear((31 * 31 * 256), 128),
                 nn.LeakyReLU(0.1),
-                nn.Linear(256, 11 * (len(string.digits) + len(configOCR.LETTER_LIST)))
+                nn.Linear(128, 12 * (len(string.digits) + len(configOCR.LETTER_LIST)))
             ]
         )
 
@@ -39,5 +43,5 @@ class SimpleOCR(nn.Module):
         x = torch.flatten(x, start_dim=1)
         for module in self.out:
             x = module(x)
-        return x.reshape(x.shape[0], 11, len(string.digits) + len(configOCR.LETTER_LIST))
+        return x.reshape(x.shape[0], 12, len(string.digits) + len(configOCR.LETTER_LIST))
 

@@ -37,7 +37,7 @@ def print_result(predictions, label_string):
 
 
 def test_func(model):
-    img = np.array(Image.open(r"C:\Programming\Projects\OCR Fixed generator\image_ХХ41КР35rus.png").convert('RGB'))
+    img = np.array(Image.open(r"C:\Programming\Datasets\License Plate OCR\O853BC68.png").convert('RGB'))
     img = configOCR.TRANSFORMS(image=img)['image']
     img = img.to(configOCR.DEVICE).unsqueeze(0)
     with torch.no_grad():

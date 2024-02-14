@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09b1712e-7938-4d91-a85b-e02eca55135e" name="Changes" comment="add main_file&#10;fixed multiple bugs">
+    <list default="true" id="09b1712e-7938-4d91-a85b-e02eca55135e" name="Changes" comment="change model&#10;add test_func for printing non training license number prediction&#10;change Adam optimizer to SGD&#10;change batch size">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/configOCR.py" beforeDir="false" afterPath="$PROJECT_DIR$/configOCR.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/datasetOCR.py" beforeDir="false" afterPath="$PROJECT_DIR$/datasetOCR.py" afterDir="false" />
@@ -40,7 +40,7 @@
   "keyToString": {
     "Python.configOCR.executor": "Run",
     "Python.datasetOCR.executor": "Debug",
-    "Python.main.executor": "Run",
+    "Python.main.executor": "Debug",
     "Python.simpleOCR.executor": "Run",
     "Python.trainOCR.executor": "Run",
     "Python.utils.executor": "Run",
@@ -137,7 +137,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707688960707</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="change model&#10;add test_func for printing non training license number prediction&#10;change Adam optimizer to SGD&#10;change batch size">
+      <option name="closed" value="true" />
+      <created>1707695793543</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1707695793543</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -161,6 +169,18 @@
     <MESSAGE value="add default value for in_channels param in OCR model" />
     <MESSAGE value="add train loop for OCR model" />
     <MESSAGE value="add main_file&#10;fixed multiple bugs" />
-    <option name="LAST_COMMIT_MESSAGE" value="add main_file&#10;fixed multiple bugs" />
+    <MESSAGE value="change model&#10;add test_func for printing non training license number prediction&#10;change Adam optimizer to SGD&#10;change batch size" />
+    <option name="LAST_COMMIT_MESSAGE" value="change model&#10;add test_func for printing non training license number prediction&#10;change Adam optimizer to SGD&#10;change batch size" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/trainOCR.py</url>
+          <line>66</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

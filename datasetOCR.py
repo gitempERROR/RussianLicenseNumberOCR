@@ -19,7 +19,9 @@ class OCRDataset(torch.utils.data.Dataset):
         image_path = os.path.join(self.image_dir, self.image_list[idx])
         image = np.array(Image.open(image_path).convert('RGB'))
 
-        label_string = self.image_list[idx].split('_')[1].split('.')[0]
+        label_string = self.image_list[idx].split('.')[0].split('_')[0] + "rus"
+        if len(label_string) < 12:
+            label_string = label_string[0:6] + '0' + label_string[6:]
         label = torch.zeros(len(label_string), 1)
 
         if self.transforms:
