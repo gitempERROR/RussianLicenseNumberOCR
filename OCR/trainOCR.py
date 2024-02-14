@@ -1,5 +1,3 @@
-import configOCR
-import torch
 from torchinfo import summary
 from tqdm import tqdm
 from simpleOCR import SimpleOCR
