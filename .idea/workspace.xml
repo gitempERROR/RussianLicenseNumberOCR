@@ -4,9 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09b1712e-7938-4d91-a85b-e02eca55135e" name="Changes" comment="add YoloV3 model architecture file">
-      <change afterPath="$PROJECT_DIR$/LicenseNumberLocalization/utilsYOLO.py" afterDir="false" />
+    <list default="true" id="09b1712e-7938-4d91-a85b-e02eca55135e" name="Changes" comment="add utils file with intersection over union func">
+      <change afterPath="$PROJECT_DIR$/LicenseNumberLocalization/configYolo.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LicenseNumberLocalization/datasetYolo.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LicenseNumberLocalization/lossYolo.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LicenseNumberLocalization/trainYolo.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LicenseNumberLocalization/modelYoloV3.py" beforeDir="false" afterPath="$PROJECT_DIR$/LicenseNumberLocalization/modelYoloV3.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LicenseNumberLocalization/utilsYOLO.py" beforeDir="false" afterPath="$PROJECT_DIR$/LicenseNumberLocalization/utilsYolo.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,23 +37,80 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.configOCR.executor&quot;: &quot;Run&quot;,
-    &quot;Python.datasetOCR.executor&quot;: &quot;Debug&quot;,
-    &quot;Python.main.executor&quot;: &quot;Debug&quot;,
-    &quot;Python.simpleOCR.executor&quot;: &quot;Run&quot;,
-    &quot;Python.trainOCR.executor&quot;: &quot;Run&quot;,
-    &quot;Python.utils.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Principalis&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.configOCR.executor": "Run",
+    "Python.datasetOCR.executor": "Debug",
+    "Python.datasetYolo.executor": "Run",
+    "Python.lossYolo.executor": "Debug",
+    "Python.main.executor": "Debug",
+    "Python.modelYoloV3.executor": "Run",
+    "Python.simpleOCR.executor": "Run",
+    "Python.test.executor": "Run",
+    "Python.trainOCR.executor": "Run",
+    "Python.trainYolo.executor": "Run",
+    "Python.utils.executor": "Run",
+    "Python.utilsYolo.executor": "Debug",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "Principalis"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Programming\Projects\LicenseNumber\OCR" />
     </key>
+  </component>
+  <component name="RunManager" selected="Python.trainYolo">
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="LicenseNumber" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/LicenseNumberLocalization" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/LicenseNumberLocalization/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="trainYolo" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="LicenseNumber" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/LicenseNumberLocalization" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/LicenseNumberLocalization/trainYolo.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.test" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -170,7 +232,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707921430760</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="add utils file with intersection over union func">
+      <option name="closed" value="true" />
+      <created>1707922023595</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1707922023595</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -198,7 +268,8 @@
     <MESSAGE value="change project to the real photos dataset" />
     <MESSAGE value="move OCR part of the project to dedicated dir" />
     <MESSAGE value="add YoloV3 model architecture file" />
-    <option name="LAST_COMMIT_MESSAGE" value="add YoloV3 model architecture file" />
+    <MESSAGE value="add utils file with intersection over union func" />
+    <option name="LAST_COMMIT_MESSAGE" value="add utils file with intersection over union func" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
