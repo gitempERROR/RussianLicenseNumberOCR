@@ -27,10 +27,9 @@ def load_model_checkpoint(model, optimizer):
     print('  Load complete!')
 
 
-def print_result(predictions, label_string):
+def print_result(predictions):
     symbol_list = configOCR.LETTER_LIST + list(string.digits)
     predictions = torch.argmax(predictions.to('cpu'), -1)
-    print(label_string[0])
     for symbol in predictions[0]:
         print(symbol_list[symbol], end='')
     print()
