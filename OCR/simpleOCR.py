@@ -1,7 +1,7 @@
 import torch
 import torch.nn as nn
 import string
-import configOCR
+from OCR import configOCR
 
 
 class SimpleOCR(nn.Module):

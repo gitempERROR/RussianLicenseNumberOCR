@@ -1,5 +1,5 @@
 import torch
-import configOCR
+from OCR import configOCR
 import string
 import numpy as np
 from PIL import Image
@@ -15,9 +15,9 @@ def save_model_checkpoint(model, optimizer, checkpoint_path):
     print('  Save complete!')
 
 
-def load_model_checkpoint(model, optimizer, checkpoint_path):
+def load_model_checkpoint(model, optimizer):
     print('Loading checkpoint...', end='')
-    checkpoint = torch.load(f=checkpoint_path, map_location=configOCR.DEVICE)
+    checkpoint = torch.load(f=configOCR.MODEL_DIR, map_location=configOCR.DEVICE)
     model.load_state_dict(checkpoint['state_dict'])
     optimizer.load_state_dict(checkpoint['optimizer'])
 

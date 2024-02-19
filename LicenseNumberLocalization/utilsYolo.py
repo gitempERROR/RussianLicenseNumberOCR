@@ -1,5 +1,5 @@
 import torch
-import configYolo
+from LicenseNumberLocalization import configYolo
 
 
 def intersection_over_union(bboxes1: torch.tensor, bboxes2: torch.tensor, mode='corners'):
@@ -46,19 +46,18 @@ def non_max_suppression(bboxes, iou_threshold, prob_threshold, mode="corners"):
     assert type(bboxes) is list
 
     bboxes_after_nms = []
-    bboxes = [box for box in bboxes if box[1] >= prob_threshold]
-    bboxes = sorted(bboxes, key=lambda x: x[1], reverse=True)
+    bboxes = [box for box in bboxes if box[0] >= prob_threshold]
+    bboxes = sorted(bboxes, key=lambda x: x[0], reverse=True)
 
     while bboxes:
         bboxes_after_nms.append(bboxes.pop(0))
         bboxes = [
             box for box in bboxes
-            if box[0] != bboxes_after_nms[-1][0]
-            or
-            (box[3]*box[4]) / (bboxes_after_nms[-1][3]*bboxes_after_nms[-1][4])
+            if
+            (box[3]*box[4]) / (bboxes_after_nms[-1][4]*bboxes_after_nms[-1][4])
             > intersection_over_union(
-                torch.tensor(box[2:]),
-                torch.tensor(bboxes_after_nms[-1][2:]),
+                torch.tensor(box[1:]),
+                torch.tensor(bboxes_after_nms[-1][1:]),
                 mode=mode
             ) < iou_threshold
         ]
@@ -116,7 +115,9 @@ def load_checkpoint(model, optimizer):
     print('  --->  Load complete')
 
 
-def bboxes_conversion(bboxes_predictions: torch.tensor, anchors, split_size) -> list:
+def bboxes_conversion(bboxes_predictions: torch.tensor, split_size) -> list:
+    split_size_id = configYolo.SCALES.index(split_size)
+    anchors = anchor_scaler()[split_size_id]
     batch_size = bboxes_predictions.shape[0]
     num_anchors = len(anchors)
     anchors = anchors.reshape(1, num_anchors, 1, 1, 2)
@@ -127,7 +128,7 @@ def bboxes_conversion(bboxes_predictions: torch.tensor, anchors, split_size) -> 
 
     cell_indices = (
         torch.arange(split_size)
-        .repeat(1, 3, 13, 1)
+        .repeat(1, 3, split_size, 1)
         .unsqueeze(-1)
     ).to(bboxes_predictions.device)
 

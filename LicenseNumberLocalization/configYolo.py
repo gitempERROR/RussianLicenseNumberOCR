@@ -49,3 +49,16 @@ transforms = A.Compose(
     ],
     bbox_params=A.BboxParams(format='yolo', min_visibility=0.4, label_fields=[])
 )
+
+connect_transforms = A.Compose(
+    [
+        A.LongestMaxSize(max_size=int(IMAGE_SIZE)),
+        A.PadIfNeeded(
+            min_height=int(IMAGE_SIZE),
+            min_width=int(IMAGE_SIZE),
+            border_mode=cv2.BORDER_CONSTANT
+        ),
+        A.Normalize(mean=(0, 0, 0), std=(1, 1, 1), max_pixel_value=255),
+        ToTensorV2()
+    ]
+)
