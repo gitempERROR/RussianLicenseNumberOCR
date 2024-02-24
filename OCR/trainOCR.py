@@ -58,9 +58,7 @@ def main():
         scaler = None
 
     if configOCR.LOAD_MODEL:
-        load_model_checkpoint(model, optimizer, configOCR.MODEL_DIR)
-
-    test_func(model)
+        load_model_checkpoint(model, optimizer)
 
     for epoch in range(configOCR.NUM_EPOCHS):
         print(rf"epoch {epoch+1}/{configOCR.NUM_EPOCHS}")
