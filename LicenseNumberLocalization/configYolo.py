@@ -9,22 +9,23 @@ DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 BATCH_SIZE = 16
 IMAGE_SIZE = 416
 NUM_EPOCHS = 100
-NUM_WORKERS = 6
-NUM_CLASSES = 4
+NUM_WORKERS = 12
 WEIGHT_DECAY = 1e-4
 LEARNING_RATE = 3e-4
-NMS_IOU_THRESHOLD = 0.45
-NMS_PROB_THRESHOLD = 0.5
+NMS_IOU_THRESHOLD = 0.4
+NMS_PROB_THRESHOLD = 0.6
 SCALES = (IMAGE_SIZE // 32, IMAGE_SIZE // 16, IMAGE_SIZE // 8)
 LOAD_MODEL = True
 SAVE_MODEL = True
 CHECKPOINT_FILE = r"C:\Programming\Models\Vision\YoloV3_License_Plate_Checkpoint.tar"
-IMAGE_DIR = r"C:\Programming\Datasets\License Plate detection\images"
-LABEL_DIR = r"C:\Programming\Datasets\License Plate detection\annotations"
+# IMAGE_DIR = r"C:\Programming\Datasets\License Plate detection\images"
+# LABEL_DIR = r"C:\Programming\Datasets\License Plate detection\annotations"
+DATASET_DIR = r"C:\Programming\Datasets\License Plate detection"
+LABEL_FILE = r"C:\Programming\Datasets\License Plate detection\train.json"
 ANCHORS = [
-    [(0.28, 0.22), (0.38, 0.48), (0.9, 0.78)],
-    [(0.07, 0.15), (0.15, 0.11), (0.14, 0.29)],
-    [(0.02, 0.03), (0.04, 0.07), (0.08, 0.06)],
+    [(0.38, 0.17), (0.50, 0.29), (0.9, 0.65)],
+    [(0.16, 0.07), (0.15, 0.11), (0.35, 0.13)],
+    [(0.03, 0.01), (0.07, 0.04), (0.08, 0.06)],
 ]
 
 scale = 1.1
