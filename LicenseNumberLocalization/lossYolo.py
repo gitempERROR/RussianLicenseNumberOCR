@@ -13,7 +13,7 @@ class YoloLoss(nn.Module):
         self.sigm = nn.Sigmoid()
 
         self.lambda_object = 1
-        self.lambda_no_object = 10
+        self.lambda_no_object = 5
         self.lambda_box = 10
 
     def forward(self, predictions, target, anchors) -> torch.tensor:
