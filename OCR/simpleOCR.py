@@ -5,35 +5,37 @@ from OCR import configOCR
 
 
 class SimpleOCR(nn.Module):
-    def __init__(self, in_channels=3):
+    def __init__(self, in_channels=1):
         super().__init__()
         self.in_channels = in_channels
         self.conv = nn.ModuleList(
             [
                 nn.Conv2d(self.in_channels, 32, kernel_size=3, padding=1),
-                nn.LeakyReLU(0.1),
+                nn.ReLU(),
                 nn.BatchNorm2d(32),
                 nn.MaxPool2d(kernel_size=2, stride=2),
                 nn.Conv2d(32, 64, kernel_size=3, padding=1),
                 nn.Conv2d(64, 64, kernel_size=1),
-                nn.LeakyReLU(0.1),
+                nn.ReLU(),
                 nn.BatchNorm2d(64),
                 nn.MaxPool2d(kernel_size=2, stride=2),
                 nn.Conv2d(64, 128, kernel_size=3, padding=1),
-                nn.LeakyReLU(0.1),
+                nn.Conv2d(128, 128, kernel_size=1),
+                nn.ReLU(),
                 nn.BatchNorm2d(128),
                 nn.MaxPool2d(kernel_size=2, stride=2),
                 nn.Conv2d(128, 256, kernel_size=3, padding=1),
-                nn.LeakyReLU(0.1),
+                nn.Conv2d(256, 256, kernel_size=1),
+                nn.ReLU(),
                 nn.BatchNorm2d(256),
                 nn.MaxPool2d(kernel_size=2, stride=2),
             ]
         )
         self.out = nn.ModuleList(
             [
-                nn.Linear((31 * 31 * 256), 128),
+                nn.Linear((16 * 16 * 256), 64),
                 nn.LeakyReLU(0.1),
-                nn.Linear(128, 12 * (len(string.digits) + len(configOCR.LETTER_LIST)))
+                nn.Linear(64, 12 * (len(string.digits) + len(configOCR.LETTER_LIST)))
             ]
         )
 
