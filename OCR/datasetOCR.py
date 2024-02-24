@@ -17,7 +17,7 @@ class OCRDataset(torch.utils.data.Dataset):
 
     def __getitem__(self, idx):
         image_path = os.path.join(self.image_dir, self.image_list[idx])
-        image = np.array(Image.open(image_path).convert('RGB'))
+        image = np.array(Image.open(image_path).convert('L'))
 
         label_string = self.image_list[idx].split('.')[0].split('_')[0] + "rus"
         if len(label_string) < 12:
