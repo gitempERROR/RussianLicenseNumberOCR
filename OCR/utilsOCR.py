@@ -33,17 +33,3 @@ def print_result(predictions):
     for symbol in predictions[0]:
         print(symbol_list[symbol], end='')
     print()
-
-
-def test_func(model):
-    img = np.array(Image.open(r"C:\Programming\Datasets\License Plate OCR\O853BC68.png").convert('RGB'))
-    img = configOCR.TRANSFORMS(image=img)['image']
-    img = img.to(configOCR.DEVICE).unsqueeze(0)
-    with torch.no_grad():
-        predictions = model(img)
-    predictions = torch.argmax(predictions.to('cpu'), -1)
-
-    symbol_list = configOCR.LETTER_LIST + list(string.digits)
-    for symbol in predictions[0]:
-        print(symbol_list[symbol], end='')
-    print()
