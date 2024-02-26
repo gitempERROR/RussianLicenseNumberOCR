@@ -4,6 +4,7 @@ import configOCR
 import os
 import numpy as np
 from PIL import Image
+from PIL import ImageEnhance
 
 
 class OCRDataset(torch.utils.data.Dataset):
@@ -17,10 +18,11 @@ class OCRDataset(torch.utils.data.Dataset):
 
     def __getitem__(self, idx):
         image_path = os.path.join(self.image_dir, self.image_list[idx])
-        image = np.array(Image.open(image_path).convert('L'))
+        image = Image.open(image_path).convert('L')
+        image = np.array(image)
 
-        label_string = self.image_list[idx].split('.')[0].split('_')[0] + "rus"
-        if len(label_string) < 12:
+        label_string = self.image_list[idx].split('.')[0].split('_')[0]
+        if len(label_string) < 9:
             label_string = label_string[0:6] + '0' + label_string[6:]
         label = torch.zeros(len(label_string), 1)
 
