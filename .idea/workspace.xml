@@ -4,20 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09b1712e-7938-4d91-a85b-e02eca55135e" name="Changes" comment="change probability threshold to 0.5">
+    <list default="true" id="09b1712e-7938-4d91-a85b-e02eca55135e" name="Changes" comment="workspace changes">
       <change afterPath="$PROJECT_DIR$/5275.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/localizationAndOCR/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LicenseNumberLocalization/configYolo.py" beforeDir="false" afterPath="$PROJECT_DIR$/LicenseNumberLocalization/configYolo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LicenseNumberLocalization/datasetYolo.py" beforeDir="false" afterPath="$PROJECT_DIR$/LicenseNumberLocalization/datasetYolo.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LicenseNumberLocalization/lossYolo.py" beforeDir="false" afterPath="$PROJECT_DIR$/LicenseNumberLocalization/lossYolo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LicenseNumberLocalization/modelYoloV3.py" beforeDir="false" afterPath="$PROJECT_DIR$/LicenseNumberLocalization/modelYoloV3.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LicenseNumberLocalization/utilsYolo.py" beforeDir="false" afterPath="$PROJECT_DIR$/LicenseNumberLocalization/utilsYolo.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OCR/configOCR.py" beforeDir="false" afterPath="$PROJECT_DIR$/OCR/configOCR.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OCR/datasetOCR.py" beforeDir="false" afterPath="$PROJECT_DIR$/OCR/datasetOCR.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OCR/main.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/OCR/simpleOCR.py" beforeDir="false" afterPath="$PROJECT_DIR$/OCR/simpleOCR.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OCR/trainOCR.py" beforeDir="false" afterPath="$PROJECT_DIR$/OCR/trainOCR.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OCR/utilsOCR.py" beforeDir="false" afterPath="$PROJECT_DIR$/OCR/utilsOCR.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/localizationAndOCR/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/localizationAndOCR/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,10 +79,14 @@
     &quot;Python.utilsYolo.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;ConnectionTest&quot;
+    &quot;git-widget-placeholder&quot;: &quot;ConnectionTest&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Programming/Projects/LicenseNumber/OCR&quot;
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Programming\Projects\LicenseNumber\OCR" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Programming\Projects\LicenseNumber" />
       <recent name="C:\Programming\Projects\LicenseNumber\OCR" />
@@ -227,8 +228,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
-        <item itemvalue="Python.main (1)" />
         <item itemvalue="Python.trainOCR" />
+        <item itemvalue="Python.main (1)" />
         <item itemvalue="Python.utilsYolo" />
         <item itemvalue="Python.test" />
       </list>
@@ -450,7 +451,95 @@
       <option name="project" value="LOCAL" />
       <updated>1708306504734</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="new dataset with more images">
+      <option name="closed" value="true" />
+      <created>1708778370356</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1708778370356</updated>
+    </task>
+    <task id="LOCAL-00027" summary="main file to connect YOLO and OCR">
+      <option name="closed" value="true" />
+      <created>1708778390651</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1708778390651</updated>
+    </task>
+    <task id="LOCAL-00028" summary="change config file for new dataset">
+      <option name="closed" value="true" />
+      <created>1708778429200</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1708778429200</updated>
+    </task>
+    <task id="LOCAL-00029" summary="change config file for new dataset">
+      <option name="closed" value="true" />
+      <created>1708778446546</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1708778446546</updated>
+    </task>
+    <task id="LOCAL-00030" summary="more image augmentations">
+      <option name="closed" value="true" />
+      <created>1708778469275</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1708778469275</updated>
+    </task>
+    <task id="LOCAL-00031" summary="change lambda values">
+      <option name="closed" value="true" />
+      <created>1708778502401</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1708778502401</updated>
+    </task>
+    <task id="LOCAL-00032" summary="change architecture for less params">
+      <option name="closed" value="true" />
+      <created>1708778584835</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1708778584835</updated>
+    </task>
+    <task id="LOCAL-00033" summary="remove test function call and change model loading function call">
+      <option name="closed" value="true" />
+      <created>1708778636389</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1708778636389</updated>
+    </task>
+    <task id="LOCAL-00034" summary="remove test function">
+      <option name="closed" value="true" />
+      <created>1708778649326</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1708778649326</updated>
+    </task>
+    <task id="LOCAL-00035" summary="code reformat">
+      <option name="closed" value="true" />
+      <created>1708778699158</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1708778699158</updated>
+    </task>
+    <task id="LOCAL-00036" summary="workspace changes">
+      <option name="closed" value="true" />
+      <created>1708778710791</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1708778710791</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -465,15 +554,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add datasetOCR.py" />
-    <MESSAGE value="add simpleOCR.py" />
-    <MESSAGE value="fix datasetOCR.py digits indexing error" />
-    <MESSAGE value="add utils.py file with model checkpoint save and load funcs" />
-    <MESSAGE value="add LOAD_MODEL and SAVE_MODEL hyperparams" />
-    <MESSAGE value="add default value for in_channels param in OCR model" />
-    <MESSAGE value="add train loop for OCR model" />
-    <MESSAGE value="add main_file&#10;fixed multiple bugs" />
-    <MESSAGE value="change model&#10;add test_func for printing non training license number prediction&#10;change Adam optimizer to SGD&#10;change batch size" />
     <MESSAGE value="change project to the real photos dataset" />
     <MESSAGE value="move OCR part of the project to dedicated dir" />
     <MESSAGE value="add YoloV3 model architecture file" />
@@ -489,21 +569,16 @@
     <MESSAGE value="add config file" />
     <MESSAGE value="remove label printing" />
     <MESSAGE value="change probability threshold to 0.5" />
-    <option name="LAST_COMMIT_MESSAGE" value="change probability threshold to 0.5" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/LicenseNumberLocalization/utilsYolo.py</url>
-          <line>142</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/LicenseNumberLocalization/trainYolo.py</url>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="new dataset with more images" />
+    <MESSAGE value="main file to connect YOLO and OCR" />
+    <MESSAGE value="change config file for new dataset" />
+    <MESSAGE value="more image augmentations" />
+    <MESSAGE value="change lambda values" />
+    <MESSAGE value="change architecture for less params" />
+    <MESSAGE value="remove test function call and change model loading function call" />
+    <MESSAGE value="remove test function" />
+    <MESSAGE value="code reformat" />
+    <MESSAGE value="workspace changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="workspace changes" />
   </component>
 </project>
