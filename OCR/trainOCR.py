@@ -16,7 +16,7 @@ def train_loop(model, optimizer, loss_fn, scaler, train_loader):
         if configOCR.DEVICE == 'cuda':
             with torch.cuda.amp.autocast():
                 prediction = model(image)
-                bool_tensor = prediction[..., 0] < 25
+                bool_tensor = prediction[..., 0] < 150000
                 loss = loss_fn(prediction[..., 0:][bool_tensor], label[..., 0][bool_tensor].long())
 
             losses.append(loss.item())
@@ -41,7 +41,7 @@ def train_loop(model, optimizer, loss_fn, scaler, train_loader):
 def main():
     model = SimpleOCR().to(configOCR.DEVICE)
     summary(model)
-    optimizer = torch.optim.Adam(model.parameters(), lr=configOCR.LEARNING_RATE)
+    optimizer = torch.optim.Adam(model.parameters(), lr=configOCR.LEARNING_RATE, weight_decay=configOCR.WEIGHT_DECAY)
     loss_fn = torch.nn.CrossEntropyLoss()
     dataset = OCRDataset(configOCR.IMAGE_DIR, configOCR.TRANSFORMS)
     dataloader = torch.utils.data.DataLoader(
@@ -65,3 +65,7 @@ def main():
         train_loop(model, optimizer, loss_fn, scaler, dataloader)
         if configOCR.SAVE_MODEL:
             save_model_checkpoint(model, optimizer, configOCR.MODEL_DIR)
+
+
+if __name__ == "__main__":
+    main()
