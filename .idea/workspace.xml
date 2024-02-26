@@ -4,17 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09b1712e-7938-4d91-a85b-e02eca55135e" name="Changes" comment="workspace changes">
+    <list default="true" id="09b1712e-7938-4d91-a85b-e02eca55135e" name="Changes" comment="add weight decay and train start">
       <change afterPath="$PROJECT_DIR$/5275.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LicenseNumberLocalization/configYolo.py" beforeDir="false" afterPath="$PROJECT_DIR$/LicenseNumberLocalization/configYolo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LicenseNumberLocalization/lossYolo.py" beforeDir="false" afterPath="$PROJECT_DIR$/LicenseNumberLocalization/lossYolo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OCR/configOCR.py" beforeDir="false" afterPath="$PROJECT_DIR$/OCR/configOCR.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OCR/datasetOCR.py" beforeDir="false" afterPath="$PROJECT_DIR$/OCR/datasetOCR.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OCR/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OCR/simpleOCR.py" beforeDir="false" afterPath="$PROJECT_DIR$/OCR/simpleOCR.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OCR/trainOCR.py" beforeDir="false" afterPath="$PROJECT_DIR$/OCR/trainOCR.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/localizationAndOCR/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/localizationAndOCR/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -539,7 +530,63 @@
       <option name="project" value="LOCAL" />
       <updated>1708778710791</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="changes to config params">
+      <option name="closed" value="true" />
+      <created>1708987359232</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1708987359232</updated>
+    </task>
+    <task id="LOCAL-00038" summary="delete main.py from OCR part and move train start to train file">
+      <option name="closed" value="true" />
+      <created>1708987394541</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1708987394541</updated>
+    </task>
+    <task id="LOCAL-00039" summary="return original model">
+      <option name="closed" value="true" />
+      <created>1708987407891</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1708987407891</updated>
+    </task>
+    <task id="LOCAL-00040" summary="change output sequence size from 12 to 9">
+      <option name="closed" value="true" />
+      <created>1708987461696</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1708987461696</updated>
+    </task>
+    <task id="LOCAL-00041" summary="change lambda params">
+      <option name="closed" value="true" />
+      <created>1708987477347</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1708987477347</updated>
+    </task>
+    <task id="LOCAL-00042" summary="add image crop for vertical images">
+      <option name="closed" value="true" />
+      <created>1708987518001</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1708987518001</updated>
+    </task>
+    <task id="LOCAL-00043" summary="add weight decay and train start">
+      <option name="closed" value="true" />
+      <created>1708987574174</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1708987574174</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -554,13 +601,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="change project to the real photos dataset" />
-    <MESSAGE value="move OCR part of the project to dedicated dir" />
-    <MESSAGE value="add YoloV3 model architecture file" />
-    <MESSAGE value="add utils file with intersection over union func" />
-    <MESSAGE value="add dataset class" />
-    <MESSAGE value="add loss function class" />
-    <MESSAGE value="fix model problems" />
     <MESSAGE value="add config file&#10;add loss function class&#10;add train file&#10;add more functions to utils" />
     <MESSAGE value="rename utils to utilsOCR" />
     <MESSAGE value="add main utils file" />
@@ -579,6 +619,13 @@
     <MESSAGE value="remove test function" />
     <MESSAGE value="code reformat" />
     <MESSAGE value="workspace changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="workspace changes" />
+    <MESSAGE value="changes to config params" />
+    <MESSAGE value="delete main.py from OCR part and move train start to train file" />
+    <MESSAGE value="return original model" />
+    <MESSAGE value="change output sequence size from 12 to 9" />
+    <MESSAGE value="change lambda params" />
+    <MESSAGE value="add image crop for vertical images" />
+    <MESSAGE value="add weight decay and train start" />
+    <option name="LAST_COMMIT_MESSAGE" value="add weight decay and train start" />
   </component>
 </project>
