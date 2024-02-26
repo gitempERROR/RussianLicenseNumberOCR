@@ -5,16 +5,17 @@ from OCR import utilsOCR
 from OCR import simpleOCR
 from OCR import configOCR
 from PIL import Image
+from PIL import ImageEnhance
 from localizationAndOCR import configConnection
 from localizationAndOCR import utils
 import torch
 import numpy as np
-import matplotlib.pyplot as plt
-import matplotlib.patches as patches
+# import matplotlib.pyplot as plt
+# import matplotlib.patches as patches
 
 
 def model_connection(modelOCR, modelYolo):
-    orig_img = Image.open(r"C:\Programming\Projects\LicenseNumber\5275.jpg").convert("RGB")
+    orig_img = Image.open(r"C:\Programming\Projects\LicenseNumber\33.jpg").convert("RGB")
     img = configYolo.connect_transforms(image=np.array(orig_img))['image']
     img = img.unsqueeze(0).to(configConnection.DEVICE)
     preds = modelYolo(img)
@@ -28,12 +29,20 @@ def model_connection(modelOCR, modelYolo):
         configYolo.NMS_PROB_THRESHOLD
     )
     for idx, bbox in enumerate(bboxes):
-        bbox = [
-            bbox[1]*orig_img.size[0],
-            bbox[2]*orig_img.size[0] - (orig_img.size[0] - orig_img.size[1]) // 2,
-            bbox[3]*orig_img.size[0],
-            bbox[4]*orig_img.size[0] - (orig_img.size[0] - orig_img.size[1]) // 2
-        ]
+        if orig_img.size[0] > orig_img.size[1]:
+            bbox = [
+                bbox[1]*orig_img.size[0],
+                bbox[2]*orig_img.size[0] - (orig_img.size[0] - orig_img.size[1]) // 2,
+                bbox[3]*orig_img.size[0],
+                bbox[4]*orig_img.size[0] - (orig_img.size[0] - orig_img.size[1]) // 2
+            ]
+        else:
+            bbox = [
+                bbox[1]*orig_img.size[1] - (orig_img.size[1] - orig_img.size[0]) // 2,
+                bbox[2]*orig_img.size[1],
+                bbox[3]*orig_img.size[1] - (orig_img.size[1] - orig_img.size[0]) // 2,
+                bbox[4]*orig_img.size[1]
+            ]
         # plt.imshow(orig_img)
         # rect = patches.Rectangle(
         #     (bbox[0], bbox[1]),
