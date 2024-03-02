@@ -33,3 +33,12 @@ def print_result(predictions):
     for symbol in predictions[0]:
         print(symbol_list[symbol], end='')
     print()
+
+
+def return_result(predictions):
+    result = ""
+    symbol_list = configOCR.LETTER_LIST + list(string.digits)
+    predictions = torch.argmax(predictions.to('cpu'), -1)
+    for symbol in predictions[0]:
+        result += symbol_list[symbol]
+    return result + 'RUS'
