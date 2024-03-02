@@ -4,8 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09b1712e-7938-4d91-a85b-e02eca55135e" name="Changes" comment="add weight decay and train start">
-      <change afterPath="$PROJECT_DIR$/5275.jpg" afterDir="false" />
+    <list default="true" id="09b1712e-7938-4d91-a85b-e02eca55135e" name="Changes" comment="add gitignore and move main.py file to root project dir">
+      <change afterPath="$PROJECT_DIR$/configAPI.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/LicenseNumber.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/LicenseNumber.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OCR/utilsOCR.py" beforeDir="false" afterPath="$PROJECT_DIR$/OCR/utilsOCR.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/localizationAndOCR/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,6 +66,7 @@
     &quot;Python.datasetYolo.executor&quot;: &quot;Run&quot;,
     &quot;Python.lossYolo.executor&quot;: &quot;Debug&quot;,
     &quot;Python.main (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.main (2).executor&quot;: &quot;Run&quot;,
     &quot;Python.main.executor&quot;: &quot;Run&quot;,
     &quot;Python.modelYoloV3.executor&quot;: &quot;Run&quot;,
     &quot;Python.simpleOCR.executor&quot;: &quot;Run&quot;,
@@ -70,8 +77,9 @@
     &quot;Python.utilsYolo.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;ConnectionTest&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Programming/Projects/LicenseNumber/OCR&quot;
+    &quot;git-widget-placeholder&quot;: &quot;Principalis&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Programming/Projects/LicenseNumber/OCR&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -83,7 +91,7 @@
       <recent name="C:\Programming\Projects\LicenseNumber\OCR" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.main">
+  <component name="RunManager" selected="Python.main (2)">
     <configuration name="main (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="LicenseNumber" />
       <option name="ENV_FILES" value="" />
@@ -106,6 +114,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="main (2)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="LicenseNumber" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="LicenseNumber" />
       <option name="ENV_FILES" value="" />
@@ -120,28 +150,6 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/localizationAndOCR/main.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="LicenseNumber" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/LicenseNumberLocalization" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/LicenseNumberLocalization/test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -218,11 +226,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.main (2)" />
         <item itemvalue="Python.main" />
         <item itemvalue="Python.trainOCR" />
         <item itemvalue="Python.main (1)" />
         <item itemvalue="Python.utilsYolo" />
-        <item itemvalue="Python.test" />
       </list>
     </recent_temporary>
   </component>
@@ -586,7 +594,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708987574174</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="add gitignore and move main.py file to root project dir">
+      <option name="closed" value="true" />
+      <created>1708989259515</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1708989259515</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -601,7 +617,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add config file&#10;add loss function class&#10;add train file&#10;add more functions to utils" />
     <MESSAGE value="rename utils to utilsOCR" />
     <MESSAGE value="add main utils file" />
     <MESSAGE value="add __init__.py files" />
@@ -626,6 +641,7 @@
     <MESSAGE value="change lambda params" />
     <MESSAGE value="add image crop for vertical images" />
     <MESSAGE value="add weight decay and train start" />
-    <option name="LAST_COMMIT_MESSAGE" value="add weight decay and train start" />
+    <MESSAGE value="add gitignore and move main.py file to root project dir" />
+    <option name="LAST_COMMIT_MESSAGE" value="add gitignore and move main.py file to root project dir" />
   </component>
 </project>
