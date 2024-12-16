@@ -23,11 +23,6 @@ import os
 from flask import Flask, request, jsonify
 from PIL import Image
 
-
-# import matplotlib.pyplot as plt
-# import matplotlib.patches as patches
-
-
 def model_connection(modelOCR, modelYolo, image_path):
     orig_img = Image.open(image_path).convert("RGB")
     augmentations = configYolo.connect_transforms(image=np.array(orig_img))

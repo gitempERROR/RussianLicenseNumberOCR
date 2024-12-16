@@ -9,6 +9,15 @@ from lossYolo import YoloLoss
 
 
 def train_fn(train_loader, model, optimizer, loss_fn, scaler, scaled_anchors):
+    """
+    :param train_loader: Загрузчик набора данных
+    :param model: Модель
+    :param optimizer: Оптимизатор
+    :param loss_fn: Функция потерь
+    :param scaler: Скейлер для экономия видеопамяти
+    :param scaled_anchors: Якорные точки приведенные к размеру масштаба их рамки
+    :return:
+    """
     loop = tqdm(train_loader, leave=True)
     losses = []
 

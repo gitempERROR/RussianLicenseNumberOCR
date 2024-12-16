@@ -17,6 +17,12 @@ class YoloLoss(nn.Module):
         self.lambda_box = 5
 
     def forward(self, predictions, target, anchors) -> torch.tensor:
+        """
+        :param predictions: предсказания модели
+        :param target: целевые рамки
+        :param anchors: якорные точки
+        :return:
+        """
         obj = target[..., 0] == 1
         no_obj = target[..., 0] == 0
 

@@ -117,6 +117,12 @@ def load_checkpoint(model, optimizer):
 
 
 def bboxes_conversion(bboxes_predictions: torch.tensor, split_size) -> list:
+    """
+    Переводит цифровые значения в вариант относительно всего изображения, а не матрицы разделения
+    :param bboxes_predictions: предсказания модели
+    :param split_size: масштаб матрицы
+    :return: список координат масок (все ещё центральная точка)
+    """
     split_size_id = configYolo.SCALES.index(split_size)
     anchors = anchor_scaler()[split_size_id]
     batch_size = bboxes_predictions.shape[0]

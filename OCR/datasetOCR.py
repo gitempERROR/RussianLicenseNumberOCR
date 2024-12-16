@@ -4,7 +4,6 @@ import configOCR
 import os
 import numpy as np
 from PIL import Image
-from PIL import ImageEnhance
 
 
 class OCRDataset(torch.utils.data.Dataset):

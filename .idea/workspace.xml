@@ -5,12 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="09b1712e-7938-4d91-a85b-e02eca55135e" name="Changes" comment="add gitignore and move main.py file to root project dir">
-      <change afterPath="$PROJECT_DIR$/configAPI.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/LicenseNumber.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/LicenseNumber.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LicenseNumberLocalization/configYolo.py" beforeDir="false" afterPath="$PROJECT_DIR$/LicenseNumberLocalization/configYolo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LicenseNumberLocalization/datasetYolo.py" beforeDir="false" afterPath="$PROJECT_DIR$/LicenseNumberLocalization/datasetYolo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LicenseNumberLocalization/lossYolo.py" beforeDir="false" afterPath="$PROJECT_DIR$/LicenseNumberLocalization/lossYolo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LicenseNumberLocalization/modelYoloV3.py" beforeDir="false" afterPath="$PROJECT_DIR$/LicenseNumberLocalization/modelYoloV3.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LicenseNumberLocalization/trainYolo.py" beforeDir="false" afterPath="$PROJECT_DIR$/LicenseNumberLocalization/trainYolo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LicenseNumberLocalization/utilsYolo.py" beforeDir="false" afterPath="$PROJECT_DIR$/LicenseNumberLocalization/utilsYolo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OCR/datasetOCR.py" beforeDir="false" afterPath="$PROJECT_DIR$/OCR/datasetOCR.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OCR/utilsOCR.py" beforeDir="false" afterPath="$PROJECT_DIR$/OCR/utilsOCR.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/localizationAndOCR/main.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

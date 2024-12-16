@@ -1,0 +1,24 @@
+1. Установить Anaconda или miniconda
+2. Запустить Anaconda prompt
+3. Прописать команду conda create -n LicenseNumber
+4. Прописать команду conda activate LicenseNumber
+
+Установка библиотек
+
+conda install conda-forge::libmamba
+
+conda install pytorch torchvision torchaudio pytorch-cuda=11.8 -c pytorch -c nvidia --solver=libmamba
+
+conda install -c menpo opencv --solver=libmamba
+
+conda install -c conda-forge albumentations --solver=libmamba
+
+conda install conda-forge::tqdm --solver=libmamba
+
+conda install anaconda::pillow --solver=libmamba
+
+conda install conda-forge::torchinfo --solver=libmamba
+
+conda install anaconda::flask --solver=libmamba
+
+Необходимо прописать корректные пути к каталогам (Датасета нет, нужно искать в интернете)

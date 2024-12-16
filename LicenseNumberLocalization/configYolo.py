@@ -17,11 +17,9 @@ NMS_PROB_THRESHOLD = 0.7
 SCALES = (IMAGE_SIZE // 32, IMAGE_SIZE // 16, IMAGE_SIZE // 8)
 LOAD_MODEL = True
 SAVE_MODEL = True
-CHECKPOINT_FILE = r"C:\Programming\Models\Vision\YoloV3_License_Plate_Checkpoint.tar"
-# IMAGE_DIR = r"C:\Programming\Datasets\License Plate detection\images"
-# LABEL_DIR = r"C:\Programming\Datasets\License Plate detection\annotations"
-DATASET_DIR = r"C:\Programming\Datasets\License Plate detection"
-LABEL_FILE = r"C:\Programming\Datasets\License Plate detection\train.json"
+CHECKPOINT_FILE = r"ПУТЬ СОХРАНЕНИЯ ЧЕКПОИНТА"
+DATASET_DIR     = r"ПУТЬ К КАТАЛОГУ С ИЗОБРАЖЕНИЯМИ"
+LABEL_FILE      = r"ПУТЬ К JSON ФАЙЛУ С РАЗМЕТКОЙ"
 ANCHORS = [
     [(0.38, 0.17), (0.50, 0.29), (0.9, 0.65)],
     [(0.16, 0.07), (0.15, 0.11), (0.35, 0.13)],
@@ -29,6 +27,8 @@ ANCHORS = [
 ]
 
 scale = 1.1
+
+# Аугментация изображений при обучении
 transforms = A.Compose(
     [
         A.LongestMaxSize(max_size=int(IMAGE_SIZE * scale)),
@@ -51,6 +51,7 @@ transforms = A.Compose(
     bbox_params=A.BboxParams(format='yolo', min_visibility=0.4, label_fields=[])
 )
 
+# Аугментация изображений при работе
 connect_transforms = A.Compose(
     [
         A.LongestMaxSize(max_size=int(IMAGE_SIZE)),

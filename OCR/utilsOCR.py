@@ -1,8 +1,6 @@
 import torch
 from OCR import configOCR
 import string
-import numpy as np
-from PIL import Image
 
 
 def save_model_checkpoint(model, optimizer, checkpoint_path):

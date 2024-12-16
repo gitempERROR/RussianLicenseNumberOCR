@@ -1,6 +1,7 @@
 import torch
 import torch.nn as nn
 
+# Архитектура YoloV3
 # tuple - out_size, kernel_size, stride
 architecture = (
     (32, 3, 1), (64, 3, 2),
